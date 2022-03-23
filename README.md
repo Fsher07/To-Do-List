@@ -1,56 +1,39 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
-# Project Name
-
-> Description the project.
-
+# To-Do List
+![ScreenShot](/images/Capture.JPG)
+> In this project, a simple to-do list is builded.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- CSS
+- JavaScript
+- HTML
+- npm
+- Webpack
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
-
+[Live Demo Link](https://fsher07.github.io/To-Do-List/)
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+-To run the project locally, clone the project using the commands and link below:
+
+-git clone https://github.com/Fsher07/plain-js-with-objects.git
 
 ### Setup
 
-### Install
+-To run the project locally, clone the project using the commands and link below:
 
-### Usage
-
-### Run tests
-
-### Deployment
-
-
-
+-git clone https://github.com/Fsher07/plain-js-with-objects.git
 ## Authors
 
-👤 **Author1**
+👤 **Furkan Salim Hıdır**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [Salim](https://github.com/Fsher07)
+- Twitter: [Salim](https://twitter.com/furkansalimhdr1)
+- LinkedIn: [Salim](https://www.linkedin.com/in/furkan-salim-h%C4%B1d%C4%B1r-3441ab1b2/)
 
 ## 🤝 Contributing
 
@@ -62,12 +45,8 @@ Feel free to check the [issues page](../../issues/).
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
+## Acknowlodgement
+Microverse
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.

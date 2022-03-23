@@ -1,0 +1,130 @@
+/* Core Styles ---------> */
+*,
+**::before,
+**::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e8e8e8;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+}
+
+ul li {
+  height: 40px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  margin: 0;
+  background-color: rgba(160, 155, 155, 0.4);
+}
+
+/* list style */
+.wrap {
+  margin-top: 10%;
+  background-color: #fff;
+  box-shadow: 1px 3px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+#get-task {
+  border: none;
+  padding-left: 6px;
+  width: 280px;
+  height: 28px;
+  line-height: 28px;
+  appearance: none;
+  font-size: 18px;
+}
+
+#get-task::placeholder {
+  font-style: italic;
+  font-size: 16px;
+}
+
+#get-task:focus {
+  outline: none;
+}
+
+.noteSheet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header {
+  padding: 0;
+}
+
+.header__item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding-right: 10px;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(160, 155, 155, 0.4);
+}
+
+.header__title {
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 6px;
+}
+
+#taskList {
+  padding: 0;
+}
+
+.taskItem {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-ellipsis-vertical {
+  cursor: move;
+}
+
+.fa-ellipsis-vertical,
+.fa-arrows-rotate,
+.fa-plus {
+  color: darkgray;
+}
+
+.fa-ellipsis-vertical:hover,
+.fa-arrows-rotate:hover,
+.fa-plus:hover {
+  color: black;
+}
+
+#lastRow {
+  text-align: center;
+  padding: 0;
+}
+
+#lastRow li {
+  text-align: center;
+  padding-top: 10px;
+  color: darkgray;
+  background-color: #e8e8e8;
+}
+
+#lastRow li:hover {
+  text-decoration: underline;
+  color: black;
+}

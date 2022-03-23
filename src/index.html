@@ -4,8 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webpack Exercise</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    
+	<section class="noteSheet">
+		<div class="wrap">
+			<ul class="header">
+				<li class="header__item">
+					<h3 class="header__title">Today's To Do</h3><span class="fa-solid fa-arrows-rotate fa-lg"></span>
+					<hr>
+				</li>
+				<li class="header__item">
+					<input id="get-task" type="text" placeholder="Add to your list..."><span><span class="fa-solid fa-plus fa-lg"></span></span>
+					<hr>
+				</li>
+			</ul>
+
+			<ul id="taskList">
+				<!-- created with dynamically in js -->
+			</ul>
+
+			<ul id="lastRow">
+				<li>Clear all completed</li>
+			</ul>
+	  </div>
+	</section>
 </body>
 </html>

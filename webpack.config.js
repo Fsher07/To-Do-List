@@ -1,7 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { merge } = require('webpack-merge');
-  const common = require('./webpack.common.js');
 
 module.exports = {
   entry: './src/index.js',
@@ -11,8 +9,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-     title: 'Output Management',
-     template: './src/index.html'
+      title: 'Output Management',
+      template: './src/index.html',
     }),
   ],
   output: {
@@ -27,5 +25,5 @@ module.exports = {
       },
     ],
   },
-  mode: 'development'
+  mode: 'development',
 };

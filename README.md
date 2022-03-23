@@ -1,7 +1,7 @@
 # To-Do List
 
 > In this project, a simple to-do list is builded.
-![ScreenShot]
+![ScreenShot](/images/Capture.JPG)
 ## Built With
 
 - CSS

@@ -34,7 +34,7 @@ hr {
 .wrap {
   margin-top: 10%;
   background-color: #fff;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 #get-task {
@@ -70,10 +70,12 @@ hr {
 .header__item {
   display: flex;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
   margin: 0;
-  padding: 0;
-  padding-right: 2px;
+  padding-right: 10px;
   justify-content: space-between;
+  border-bottom: 1px solid rgba(160, 155, 155, 0.4);
 }
 
 .header__title {

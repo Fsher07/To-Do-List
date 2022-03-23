@@ -27,7 +27,7 @@ To get a local copy up and running follow these simple example steps.
 -To run the project locally, clone the project using the commands and link below:
 
 -git clone https://github.com/Fsher07/plain-js-with-objects.git
-## Authors
+## Author
 
 👤 **Furkan Salim Hıdır**
 

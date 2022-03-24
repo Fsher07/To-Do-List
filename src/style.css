@@ -96,6 +96,11 @@ hr {
   align-items: center;
 }
 
+input[type=checkbox]:checked + span{
+  text-decoration: line-through;
+  color: darkgray;
+}
+
 .fa-ellipsis-vertical {
   cursor: move;
 }

@@ -111,6 +111,11 @@ input[type=checkbox]:checked + span{
   color: darkgray;
 }
 
+.fa-trash-can:hover {
+  cursor: pointer;
+  color: red;
+}
+
 .fa-ellipsis-vertical:hover,
 .fa-arrows-rotate:hover,
 .fa-plus:hover {

@@ -6,11 +6,13 @@ const addBtn = document.querySelector('.fa-plus');
 
 addBtn.addEventListener('click', taskOperations.addTask);
 
+taskOperations.updateTasks();
+
 // const tasks = [
   
 // ];
 
-// const taskList = document.querySelector('#taskList');
+
 
 // tasks.sort((a, b) => a.index - b.index).forEach((task) => {
 //   taskList.innerHTML += `

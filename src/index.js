@@ -1,13 +1,16 @@
 import './style.css';
-import taskOperations from './taskOperations.js';
+import TaskOperations from './taskOperations.js';
+import completeCheck from './checkComplete.js';
 
 const addBtn = document.querySelector('.fa-plus');
 
-addBtn.addEventListener('click', taskOperations.addTask);
-taskOperations.descriptionInput.addEventListener('keypress', (e) => {
+addBtn.addEventListener('click', TaskOperations.addTask);
+TaskOperations.descriptionInput.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
-    taskOperations.addTask();
+    TaskOperations.addTask();
   }
 });
 
-taskOperations.updateTasks();
+TaskOperations.updateTasks();
+
+completeCheck();

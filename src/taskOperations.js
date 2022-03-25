@@ -101,9 +101,4 @@ export default class TaskOperations {
       TaskOperations.tasks = [];
     }
   }
-
-  static init = () => {
-    TaskOperations.loadTasks();
-    TaskOperations.renderTasks();
-  }
 }

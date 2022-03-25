@@ -1,3 +1,4 @@
+import completeCheck from "./checkComplete.js";
 export default class TaskOperations {
   constructor(index, description, completed) {
     this.index = index;
@@ -10,6 +11,13 @@ export default class TaskOperations {
   static descriptionInput = document.getElementById('get-task');
 
   static taskList = document.querySelector('#taskList');
+
+  static fixTaskList = () => {
+    TaskOperations.tasks.forEach((task, i) => {
+      task.index = i;
+      localStorage.setItem('datas', JSON.stringify(TaskOperations.tasks));
+    });
+  };
 
   static addTask = () => {
     const Task = new TaskOperations(TaskOperations.tasks.length,
@@ -45,6 +53,14 @@ export default class TaskOperations {
       });
     }
   }
+
+  static clearCompletedTasks = () => {
+    TaskOperations.tasks.forEach((task) => {
+      if (task.completed) { 
+        TaskOperations.deleteTask(task.index);
+      }
+    });  
+  };
 
   static editTask = (index) => {
     document.querySelectorAll('#taskList li span .editDescription').forEach((node) => {
@@ -89,6 +105,13 @@ export default class TaskOperations {
     editProperty.addEventListener('click', () => {
       TaskOperations.editTask(task.index);
     });
+
+    const clearButton = document.querySelector('#lastRow li');
+    clearButton.addEventListener('click', () => {
+      TaskOperations.clearCompletedTasks();
+    });
+
+    completeCheck();
   }
 
   static updateTasks = () => {

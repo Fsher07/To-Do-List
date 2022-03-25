@@ -151,4 +151,5 @@ input[type=checkbox]:checked + span {
 #lastRow li:hover {
   text-decoration: underline;
   color: black;
+  cursor: pointer;
 }

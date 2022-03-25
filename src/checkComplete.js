@@ -1,7 +1,7 @@
 import TaskOperations from "./taskOperations.js";
 
 const completeCheck = () => {
-  const checkBox = document.querySelectorAll(`input[type="checkbox"]`);
+  const checkBox = document.querySelectorAll('input[type="checkbox"]');
   checkBox.forEach((node) => {
     node.addEventListener('change', () => {
       if (node.checked) {

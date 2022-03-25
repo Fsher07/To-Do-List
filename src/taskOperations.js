@@ -23,9 +23,41 @@ export default class taskOperations {
 
   static deleteTask = (index) => {
     const taskBlock = document.getElementById(index);
-    taskOperations.tasks.splice(index, 1);
+    const taskHolder = document.querySelectorAll('.taskItem');
+    taskOperations.tasks = taskOperations.tasks.filter((item) => item.index !== index);
+    taskOperations.tasks.forEach((task) => {
+      if (task.index > index) {
+        task.index -= 1;
+      } else {
+        task.index = task.index;
+      }
+    });
     localStorage.setItem('datas', JSON.stringify(taskOperations.tasks));
     taskOperations.taskList.removeChild(taskBlock);
+
+    if (taskHolder.length === 0) {
+      taskOperations.taskList.innerHTML = '<h2>No tasks yet</h2>';
+    } else {
+      taskHolder.forEach((task) => {
+        if (task.id > index) {
+        task.id = task.id - 1;
+        } else {
+        task.id = task.id;
+        }
+      });
+    }
+  }
+
+  static editTask = (index) => {
+    const task = taskOperations.tasks.find((item) => item.index === index);
+    taskOperations.descriptionInput.value = task.description;
+    taskOperations.descriptionInput.focus();
+    console.log('hi');
+
+    const deleteBtn = document.querySelectorAll(`#taskList li:last-child span .fa-ellipsis-vertical`);
+    deleteBtn.addEventListener('click', () => {
+      taskOperations.editTask(task.index);
+    });
   }
 
   // static completeTask = (index) => {
@@ -38,15 +70,24 @@ export default class taskOperations {
   //   localStorage.setItem('datas', JSON.stringify(taskOperations.tasks));
   // }
 
-  static sortTask = () => {
-    taskOperations.tasks.sort((a, b) => a.index - b.index);
-    localStorage.setItem('datas', JSON.stringify(taskOperations.tasks));
-  }
+  // static sortTask = () => {
+  //   taskOperations.tasks.sort((a, b) => a.index - b.index);
+  //   localStorage.setItem('datas', JSON.stringify(taskOperations.tasks));
+  // }
 
   static renderTasks = (task) => {
-      taskOperations.taskList.innerHTML += `
-        <li id="${task.index}" class="taskItem"><span><input type="checkbox" class="checkbox" ${task.completed ? 'checked' : 'unchecked'}>
-        <span>${task.description}</span></span><i class="fa-solid fa-trash-can"></i><span class="fa-solid fa-ellipsis-vertical fa-lg"></span></li> <hr>`;
+    const taskHolder = document.createElement('li');
+    taskHolder.setAttribute('id', task.index);
+    taskHolder.setAttribute('class', 'taskItem');
+    taskHolder.innerHTML = `
+      <span><input type="checkbox" class="checkbox" ${task.completed ? 'checked' : 'unchecked'}>
+      <span>${task.description}</span></span><i class="fa-solid fa-trash-can"></i><span class="fa-solid fa-ellipsis-vertical fa-lg"></span>`;
+    taskOperations.taskList.appendChild(taskHolder);
+
+    const deleteBtn = document.querySelector(`#taskList li:last-child i`);
+    deleteBtn.addEventListener('click', () => {
+      taskOperations.deleteTask(task.index);
+    });
   }
 
   static updateTasks = () => {
@@ -59,7 +100,7 @@ export default class taskOperations {
       taskOperations.tasks = [];
     }       
   }
-    
+
   static init = () => {
     taskOperations.loadTasks();
     taskOperations.renderTasks();

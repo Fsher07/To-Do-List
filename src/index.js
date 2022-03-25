@@ -5,6 +5,11 @@ import taskOperations from './taskOperations';
 const addBtn = document.querySelector('.fa-plus');
 
 addBtn.addEventListener('click', taskOperations.addTask);
+taskOperations.descriptionInput.addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    taskOperations.addTask();
+  }
+});
 
 taskOperations.updateTasks();
 

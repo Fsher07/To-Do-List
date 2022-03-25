@@ -71,21 +71,6 @@ export default class TaskOperations {
     });
   }
 
-  // static completeTask = (index) => {
-  //   TaskOperations.tasks[index].completed = true;
-  //   localStorage.setItem('datas', JSON.stringify(TaskOperations.tasks));
-  // }
-
-  // static uncompleteTask = (index) => {
-  //   TaskOperations.tasks[index].completed = false;
-  //   localStorage.setItem('datas', JSON.stringify(TaskOperations.tasks));
-  // }
-
-  // static sortTask = () => {
-  //   TaskOperations.tasks.sort((a, b) => a.index - b.index);
-  //   localStorage.setItem('datas', JSON.stringify(TaskOperations.tasks));
-  // }
-
   static renderTasks = (task) => {
     const taskHolder = document.createElement('li');
     taskHolder.setAttribute('id', task.index);
@@ -121,27 +106,4 @@ export default class TaskOperations {
     TaskOperations.loadTasks();
     TaskOperations.renderTasks();
   }
-
-  // static addEventListeners = () => {
-  //   const addBtn = document.querySelector('.fa-plus');
-  //   const taskList = document.querySelector('#taskList');
-
-  //   addBtn.addEventListener('click', TaskOperations.addTask);
-  //   taskList.addEventListener('click', (e) => {
-  //     if (e.target.classList.contains('fa-ellipsis-vertical')) {
-  //       const index = e.target.parentElement.parentElement.id;
-  //       if (e.target.parentElement.parentElement.classList.contains('taskItem')) {
-  //         TaskOperations.deleteTask(index);
-  //         TaskOperations.renderTasks();
-  //       } else if (e.target.parentElement.parentElement.classList.contains('checkbox')) {
-  //         if (e.target.parentElement.parentElement.checked) {
-  //           TaskOperations.completeTask(index);
-  //         } else {
-  //           TaskOperations.uncompleteTask(index);
-  //         }
-  //         TaskOperations.renderTasks();
-  //       }
-  //     }
-  //   });
-  // }
 }

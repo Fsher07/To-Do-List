@@ -49,16 +49,35 @@ export default class taskOperations {
   }
 
   static editTask = (index) => {
-    const task = taskOperations.tasks.find((item) => item.index === index);
-    taskOperations.descriptionInput.value = task.description;
-    taskOperations.descriptionInput.focus();
-    console.log('hi');
-
-    const deleteBtn = document.querySelectorAll(`#taskList li:last-child span .fa-ellipsis-vertical`);
-    deleteBtn.addEventListener('click', () => {
-      taskOperations.editTask(task.index);
+    document.querySelectorAll("#taskList li span .editDescription").forEach(function(node){
+      node.ondblclick=function(){
+        var val=this.innerHTML;
+        var input=document.createElement("input");
+        input.type="text";
+        input.className="editInputBox";
+        input.value=val;
+        input.onblur=function(){
+          var val=this.value;
+          this.parentNode.innerHTML=val;
+          taskOperations.tasks.forEach((task) => {
+            if (task.index === index) {
+              task.description = input.value;
+              localStorage.setItem('datas', JSON.stringify(taskOperations.tasks));
+            }
+          });
+        }
+        this.innerHTML="";
+        this.appendChild(input);
+        input.focus();
+      }
     });
+    
+    // const task = taskOperations.tasks.find((item) => item.index === index);
+    // localStorage.setItem('datas', JSON.stringify(taskOperations.tasks));
+    // const taskBlock = document.getElementById(index);
+    // taskBlock.querySelector('.editDescription').innerHTML = input;
   }
+
 
   // static completeTask = (index) => {
   //   taskOperations.tasks[index].completed = true;
@@ -81,12 +100,17 @@ export default class taskOperations {
     taskHolder.setAttribute('class', 'taskItem');
     taskHolder.innerHTML = `
       <span><input type="checkbox" class="checkbox" ${task.completed ? 'checked' : 'unchecked'}>
-      <span>${task.description}</span></span><i class="fa-solid fa-trash-can"></i><span class="fa-solid fa-ellipsis-vertical fa-lg"></span>`;
+      <span class="editDescription">${task.description}</span></span><span class="btnHolder"><i class="fa-solid fa-trash-can"></i><span class="fa-solid fa-ellipsis-vertical fa-lg"></span></span>`;
     taskOperations.taskList.appendChild(taskHolder);
 
     const deleteBtn = document.querySelector(`#taskList li:last-child i`);
     deleteBtn.addEventListener('click', () => {
       taskOperations.deleteTask(task.index);
+    });
+
+    const editProperty = document.querySelector(`#taskList li:last-child span .editDescription`);
+    editProperty.addEventListener('click', () => {
+      taskOperations.editTask(task.index);
     });
   }
 

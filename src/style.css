@@ -43,7 +43,6 @@ hr {
   width: 280px;
   height: 28px;
   line-height: 28px;
-  appearance: none;
   font-size: 18px;
 }
 
@@ -90,9 +89,10 @@ hr {
 }
 
 .taskItem {
-  width: 300px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-right: -10px;
   align-items: center;
   border-bottom: 1px solid rgba(160, 155, 155, 0.4);
 }
@@ -100,6 +100,19 @@ hr {
 input[type=checkbox]:checked + span{
   text-decoration: line-through;
   color: darkgray;
+}
+
+.btnHolder {
+  padding-right: 10px;
+}
+
+.editInputBox {
+  outline: none;
+  appearance: none;
+}
+
+.fa-trash-can {
+  padding-right: 5px;
 }
 
 .fa-ellipsis-vertical {

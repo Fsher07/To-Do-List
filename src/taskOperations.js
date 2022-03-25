@@ -1,4 +1,3 @@
-import completeCheck from "./checkComplete.js";
 export default class TaskOperations {
   constructor(index, description, completed) {
     this.index = index;
@@ -56,10 +55,10 @@ export default class TaskOperations {
 
   static clearCompletedTasks = () => {
     TaskOperations.tasks.forEach((task) => {
-      if (task.completed) { 
+      if (task.completed) {
         TaskOperations.deleteTask(task.index);
       }
-    });  
+    });
   };
 
   static editTask = (index) => {
@@ -110,8 +109,6 @@ export default class TaskOperations {
     clearButton.addEventListener('click', () => {
       TaskOperations.clearCompletedTasks();
     });
-
-    completeCheck();
   }
 
   static updateTasks = () => {

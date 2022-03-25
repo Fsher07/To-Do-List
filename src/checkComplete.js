@@ -1,4 +1,4 @@
-import TaskOperations from "./taskOperations.js";
+import TaskOperations from './taskOperations.js';
 
 const completeCheck = () => {
   const checkBox = document.querySelectorAll('input[type="checkbox"]');

@@ -9,6 +9,7 @@ TaskOperations.descriptionInput.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     TaskOperations.addTask();
   }
+  completeCheck();
 });
 
 TaskOperations.updateTasks();

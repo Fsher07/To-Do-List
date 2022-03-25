@@ -11,6 +11,13 @@ export default class TaskOperations {
 
   static taskList = document.querySelector('#taskList');
 
+  static fixTaskList = () => {
+    TaskOperations.tasks.forEach((task, i) => {
+      task.index = i;
+      localStorage.setItem('datas', JSON.stringify(TaskOperations.tasks));
+    });
+  };
+
   static addTask = () => {
     const Task = new TaskOperations(TaskOperations.tasks.length,
       TaskOperations.descriptionInput.value, false);
@@ -45,6 +52,14 @@ export default class TaskOperations {
       });
     }
   }
+
+  static clearCompletedTasks = () => {
+    TaskOperations.tasks.forEach((task) => {
+      if (task.completed) {
+        TaskOperations.deleteTask(task.index);
+      }
+    });
+  };
 
   static editTask = (index) => {
     document.querySelectorAll('#taskList li span .editDescription').forEach((node) => {
@@ -89,6 +104,11 @@ export default class TaskOperations {
     editProperty.addEventListener('click', () => {
       TaskOperations.editTask(task.index);
     });
+
+    const clearButton = document.querySelector('#lastRow li');
+    clearButton.addEventListener('click', () => {
+      TaskOperations.clearCompletedTasks();
+    });
   }
 
   static updateTasks = () => {
@@ -100,10 +120,5 @@ export default class TaskOperations {
     } else {
       TaskOperations.tasks = [];
     }
-  }
-
-  static init = () => {
-    TaskOperations.loadTasks();
-    TaskOperations.renderTasks();
   }
 }

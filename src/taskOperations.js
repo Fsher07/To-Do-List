@@ -12,7 +12,8 @@ export default class TaskOperations {
   static taskList = document.querySelector('#taskList');
 
   static addTask = () => {
-    const Task = new TaskOperations(TaskOperations.tasks.length, TaskOperations.descriptionInput.value, false);
+    const Task = new TaskOperations(TaskOperations.tasks.length,
+      TaskOperations.descriptionInput.value, false);
 
     if (Task.description !== '') {
       TaskOperations.tasks.push(Task);
@@ -47,15 +48,18 @@ export default class TaskOperations {
 
   static editTask = (index) => {
     document.querySelectorAll('#taskList li span .editDescription').forEach((node) => {
-      node.ondblclick = function() {
-        let newValue = this.innerHTML;
-        let input = document.createElement('input');
+      node.ondblclick = function createEditInput() {
+        const val = this.innerHTML;
+        const input = document.createElement('input');
         input.type = 'text';
         input.className = 'editInputBox';
-        input.value = newValue;
-        input.onblur = () => {
-          let newValue = this.value;
-          this.parentNode.innerHTML = newValue;
+        input.value = val;
+        this.innerHTML = '';
+        this.appendChild(input);
+        input.focus();
+        input.onblur = function setLocalStorageAgain() {
+          const val = this.value;
+          this.parentNode.innerHTML = val;
           TaskOperations.tasks.forEach((task) => {
             if (task.index === index) {
               task.description = input.value;
@@ -63,9 +67,6 @@ export default class TaskOperations {
             }
           });
         };
-        this.innerHTML = '';
-        this.appendChild(input);
-        input.focus();
       };
     });
   }

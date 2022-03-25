@@ -97,7 +97,7 @@ hr {
   border-bottom: 1px solid rgba(160, 155, 155, 0.4);
 }
 
-input[type=checkbox]:checked + span{
+input[type=checkbox]:checked + span {
   text-decoration: line-through;
   color: darkgray;
 }

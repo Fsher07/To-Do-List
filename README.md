@@ -12,7 +12,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://fsher07.github.io/To-Do-List/)
+[Live Demo Link](https://fsher07.github.io/To-Do-List/dist)
 
 ## Getting Started
 
